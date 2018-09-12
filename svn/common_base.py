@@ -36,7 +36,7 @@ class CommonBase(object):
         if return_binary is True or do_combine is True:
             return stdout
 
-        return stdout.decode().strip('\n').split('\n')
+        return stdout.decode(svn.config.CONSOLE_ENCODING).strip('\n').split('\n')
 
     def rows_to_dict(self, rows, lc=True):
         d = {}
